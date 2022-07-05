@@ -4,13 +4,21 @@ package com.huybq26.entity;
 import java.util.*;
 
 public class BigMenu extends Beverage {
+    // Singleton since there should only be one instance of bigMenu
     // This is the root of the composite tree
     // Initially, consist of 3 smaller menus: Coffee, Tea and Freeze
     // Will add them later in the main method
-    private List<Beverage> bigList;
+    private static BigMenu bigMenu;
 
-    public BigMenu(){
-        bigList = new ArrayList<>();
+    private List<Beverage> bigList = new ArrayList<>();
+
+    private BigMenu(){ }
+
+    public static BigMenu getInstance(){
+        if (bigMenu == null){
+            bigMenu = new BigMenu();
+        }
+        return bigMenu;
     }
     public void addItem (Beverage beverage){
         bigList.add(beverage);

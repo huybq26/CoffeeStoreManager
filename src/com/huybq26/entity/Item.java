@@ -8,25 +8,24 @@ import java.util.StringTokenizer;
 public class Item extends Beverage{
     private int id;
     private String name;
-    private float price;
+    private double price;
     private String description;
 
-    public Item (int id, String name, float price, String description){
-        this.id = id;
+    public Item (String name, String description, double price){
         this.name = name;
         this.price = price;
         this.description = description;
     }
 
-    public int getId(){
-        return id;
-    }
+//    public int getId(){
+//        return id;
+//    }
 
     public String getName(){
         return name;
     }
 
-    public float getPrice(){
+    public double getPrice(){
         return price;
     }
 
@@ -34,9 +33,9 @@ public class Item extends Beverage{
         return description;
     }
 
-    public void setId(int id){
-        this.id = id;
-    }
+//    public void setId(int id){
+//        this.id = id;
+//    }
 
     public void setName(String name){
         this.name = name;
@@ -52,7 +51,7 @@ public class Item extends Beverage{
 
     public void showDetails(){
         StringBuilder sb = new StringBuilder();
-        sb.append(this.id + ", " + this.name + ", " + this.price + "$.");
+        sb.append(this.name + ", " + this.price + "$.");
         sb.append("\n");
         sb.append(this.description);
         sb.append("\n");

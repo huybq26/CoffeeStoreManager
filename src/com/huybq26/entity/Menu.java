@@ -17,9 +17,11 @@ public class Menu extends Beverage{
         menuList.add(beverage);
     }
 
-    public void removeItem(Beverage beverage){
+    public void removeItem(int index){
+        Beverage beverage = menuList.get(index);
         menuList.remove(beverage);
     }
+
 
     public void showDetails(){
         System.out.println(this.name + " Menu" + " consists of: ");

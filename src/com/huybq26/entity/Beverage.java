@@ -4,10 +4,10 @@ package com.huybq26.entity;
 public abstract class Beverage {
     // composite pattern
     // composite:
-    public void addItem(Item item){
+    public void addItem(Beverage beverage){
         throw new UnsupportedOperationException();
     }
-    public void removeItem(Item item){
+    public void removeItem(int index){
         throw new UnsupportedOperationException();
     }
     public void showMenu(){
@@ -21,7 +21,7 @@ public abstract class Beverage {
     public String getName(){
         throw new UnsupportedOperationException();
     }
-    public float getPrice(){
+    public double getPrice(){
         throw new UnsupportedOperationException();
     }
     public String getDescription(){
