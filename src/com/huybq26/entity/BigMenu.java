@@ -9,7 +9,7 @@ public class BigMenu extends Beverage {
     // Initially, consist of 3 smaller menus: Coffee, Tea and Freeze
     // Will add them later in the main method
     private static BigMenu bigMenu;
-
+    private String name = "Big Menu";
     private List<Beverage> bigList = new ArrayList<>();
 
     private BigMenu(){ }
@@ -29,10 +29,14 @@ public class BigMenu extends Beverage {
     }
 
     public void showDetails(){
-        System.out.println("Big Menu" + " consists of: ");
+        System.out.println("Big Menu: ");
         for (Beverage beverage: bigList){
             // delegate for item to implement
             beverage.showDetails();
         }
+    }
+
+    public String getName(){
+       return this.name;
     }
 }

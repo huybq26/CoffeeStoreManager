@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CoffeeStoreController {
-    private List<Menu> menuList;
+    private List<Beverage> menuList;
     private List<Beverage> allList;
 
     public CoffeeStoreController(){
@@ -21,7 +21,7 @@ public class CoffeeStoreController {
     public Beverage createBeverage(String type, String name, String description, double price){
         BeverageFactory factory = new BeverageFactory();
         Beverage beverage = factory.createBeverage(type, name, description, price);
-        if (type.toLowerCase().equals("menu")) menuList.add((Menu) beverage);
+        if (type.toLowerCase().equals("menu") || type.toLowerCase().equals("bigmenu")) menuList.add(beverage);
         allList.add(beverage);
         return beverage;
     }
@@ -32,7 +32,7 @@ public class CoffeeStoreController {
         this.menuList.add(menu);
     }
 
-    public List<Menu> getMenuList(){
+    public List<Beverage> getMenuList(){
         return menuList;
     }
 
@@ -49,7 +49,7 @@ public class CoffeeStoreController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        parent.addItem(child); // subclass will handle the addition for you. No need to worry.
+        // subclass will handle the addition for you. No need to worry.
     }
 
 
@@ -66,6 +66,24 @@ public class CoffeeStoreController {
 
     public void showAllItemsDetails(){
         BigMenu.getInstance().showDetails();
+    }
+
+    public void showAllMenus(){
+        int i=0;
+        for (Beverage menu:menuList){
+            System.out.println(i+1 + ", " + menu.getName());
+            i++;
+        }
+    }
+
+    public void showItemsFromMenu(int index){
+        Beverage menu = menuList.get(index);
+        List<Beverage> list = menu.getItemList();
+        int i=0;
+        for (Beverage item:menuList){
+            System.out.println(i+1 + ", " + item.getName());
+            i++;
+        }
     }
 
 }

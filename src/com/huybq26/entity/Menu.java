@@ -13,6 +13,9 @@ public class Menu extends Beverage{
         this.name = name;
         this.description = description;
     }
+    public List<Beverage> getItemList(Beverage beverage){
+        return menuList;
+    }
     public void addItem (Beverage beverage){
         menuList.add(beverage);
     }
@@ -27,6 +30,7 @@ public class Menu extends Beverage{
         System.out.println(this.name + " Menu" + " consists of: ");
         for (Beverage beverage: menuList){
             // delegate for item to implement
+//            System.out.println(menuList.size());
             beverage.showDetails();
         }
     }
