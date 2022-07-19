@@ -51,10 +51,8 @@ public class Item extends Beverage{
 
     public void showDetails(){
         StringBuilder sb = new StringBuilder();
-        sb.append(this.name + ", " + this.price + "$.");
-        sb.append("\n");
-        sb.append(this.description);
-        sb.append("\n");
+        sb.append("  ." + this.name + " (" + this.description + "), ");
+        sb.append(this.price + "$");
         System.out.println(sb.toString());
     }
 }

@@ -24,7 +24,8 @@ public class BigMenu extends Beverage {
         bigList.add(beverage);
     }
 
-    public void removeItem(Beverage beverage){
+    public void removeItem(int index){
+        Beverage beverage = bigList.get(index);
         bigList.remove(beverage);
     }
 
@@ -34,6 +35,10 @@ public class BigMenu extends Beverage {
             // delegate for item to implement
             beverage.showDetails();
         }
+    }
+
+    public List<Beverage> getItemList(){
+        return bigList;
     }
 
     public String getName(){

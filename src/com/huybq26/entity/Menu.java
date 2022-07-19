@@ -27,6 +27,7 @@ public class Menu extends Beverage{
 
 
     public void showDetails(){
+        System.out.println();
         System.out.println(this.name + " Menu" + " consists of: ");
         for (Beverage beverage: menuList){
             // delegate for item to implement

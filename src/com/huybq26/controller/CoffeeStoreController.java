@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CoffeeStoreController {
-    private List<Beverage> menuList;
-    private List<Beverage> allList;
+    private List<Beverage> menuList; // List of all menus, regardless of where they are located
+    private List<Beverage> allList; // List of both items and menus
 
     public CoffeeStoreController(){
         menuList = new ArrayList<>();
@@ -71,6 +71,7 @@ public class CoffeeStoreController {
     public void showAllMenus(){
         int i=0;
         for (Beverage menu:menuList){
+            // getting error here after removing and show, since menuList is not informed when removing item.
             System.out.println(i+1 + ", " + menu.getName());
             i++;
         }

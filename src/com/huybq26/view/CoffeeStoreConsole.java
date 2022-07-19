@@ -28,10 +28,29 @@ public class CoffeeStoreConsole {
     public void start(){
 
         Beverage bigMenu = controller.createBeverage("bigmenu", "bigmenu", "Big Menu", 0);
-//        Beverage coffeeMenu = controller.createBeverage("menu", "Coffee", "Menu with all Coffees", 0);
-//        bigMenu.addItem(coffeeMenu);
-//        coffeeMenu.addItem(controller.createBeverage("item", "Milk Coffee", "Delicious Milk Coffee", 2.7));
-//        coffeeMenu.addItem(controller.createBeverage("item", "Black Coffee", "Delicious Black Coffee", 2.5));
+        Beverage coffeeMenu = controller.createBeverage("menu", "PHIN Coffee", "Menu with all PHIN Coffees", 0);
+        bigMenu.addItem(coffeeMenu);
+        coffeeMenu.addItem(controller.createBeverage("item", "PHIN Milk Coffee", "Delicious Milk Coffee", 2.7));
+        coffeeMenu.addItem(controller.createBeverage("item", "PHIN Black Coffee", "Delicious Black Coffee", 2.5));
+        coffeeMenu.addItem(controller.createBeverage("item", "White PHIN Milk Coffee", "Delicious White Milk Coffee", 2.4));
+        coffeeMenu.addItem(controller.createBeverage("item", "PHIN Black Coffee", "Delicious Black Coffee", 2.6));
+        Beverage espressoMenu = controller.createBeverage("menu", "Espresso Coffee", "Menu with all Espresso Coffees", 0);
+        bigMenu.addItem(espressoMenu);
+        espressoMenu.addItem(controller.createBeverage("item", "Espresso", "Delicious Espresso", 2.5));
+        espressoMenu.addItem(controller.createBeverage("item", "Cappuccino", "Delicious Cappuccino", 3.0));
+        espressoMenu.addItem(controller.createBeverage("item", "Caramel Macchiato", "Delicious Caramel Macchiato", 4.0));
+        Beverage teaMenu = controller.createBeverage("menu", "Tea", "Menu with all kinds of tea", 0);
+        bigMenu.addItem(teaMenu);
+        teaMenu.addItem(controller.createBeverage("item", "Oolong Tea", "Delicious Espresso", 1.5));
+        teaMenu.addItem(controller.createBeverage("item", "Peach Tea", "Delicious Peach Tea", 1.8));
+
+        Beverage iceBlendedMenu = controller.createBeverage("menu", "Ice Blended", "Menu with all kinds of ice blended", 0);
+        bigMenu.addItem(iceBlendedMenu);
+        iceBlendedMenu.addItem(controller.createBeverage("item", "Green Tea Freeze", "Delicious Green Tea Freeze", 2.5));
+        iceBlendedMenu.addItem(controller.createBeverage("item", "Chocolate Freeze", "Delicious Chocolate Freeze", 2.5));
+        iceBlendedMenu.addItem(controller.createBeverage("item", "Cookies & Cream", "Delicious cookies & cream", 2.5));
+
+
 //        controller.showAllItemsDetails();
 //        controller.removeItem(0, 1);
 //        controller.showAllItemsDetails();
@@ -103,6 +122,4 @@ public class CoffeeStoreConsole {
     public void showItemsFromMenu(int index){
         controller.showItemsFromMenu(index);
     }
-
-
 }
